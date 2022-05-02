@@ -26,7 +26,7 @@ $ docker volume create corekeeper_save_volume
 Unfortunately Core Keeper doesn't allow anonymous access to download the game, so we have to authenticate one-time to save this container as a trusted device.
 
 ```console
-$ docker run -it \
+$ docker run -it --rm \
     -v "steamcmd_login_volume:/home/steam/Steam" \
     -v "steamcmd_volume:/home/steam/steamcmd" \
     core-keeper-dedicated \

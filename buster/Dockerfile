@@ -13,8 +13,6 @@ ENV DLURL="https://raw.githubusercontent.com/xalimar/core-keeper-dedicated"
 ENV STEAM_BETA_NAME=experimental
 ENV APPSAVEDIR="${HOMEDIR}/.config/unity3d/Pugstorm/Core Keeper"
 
-COPY entry.sh /home/steam/entry.sh
-
 RUN set -x \
 	&& apt-get update \
     && apt-get install -y --no-install-recommends --no-install-suggests \
@@ -22,7 +20,7 @@ RUN set -x \
         xvfb \
     && mkdir "${STEAMAPPDIR}" \
     && mkdir -p "${APPSAVEDIR}" \
-#    && wget --max-redirect=30 "${DLURL}/main/etc/entry.sh" -O "${HOMEDIR}/entry.sh" \
+    && wget --max-redirect=30 "${DLURL}/main/etc/entry.sh" -O "${HOMEDIR}/entry.sh" \
     && chmod +x "${HOMEDIR}/entry.sh" \
     && chown -R "${USER}:${USER}" "${HOMEDIR}/entry.sh" "${STEAMAPPDIR}" "${HOMEDIR}/.config" \
 	&& rm -rf /var/lib/apt/lists/*
