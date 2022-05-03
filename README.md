@@ -50,7 +50,7 @@ docker run -d --net=host --name=core-keeper-dedicated \
 ## View the container logs to find the Game ID
 You'll need this ID to join the game. You can press ctrl-c to stop watching the logfile
 
-```
+```console
 docker logs -f core-keeper-dedicated
 ```
 
@@ -70,6 +70,6 @@ It will be named `0.world.gzip`. Copy that to the docker `corekeeper_save_volume
 ```
 
 Finally, restart the container:
-```
+```console
 docker start core-keeper-dedicated
 ```
