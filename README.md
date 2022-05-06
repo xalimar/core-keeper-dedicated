@@ -10,8 +10,7 @@ Explore an endless cavern of creatures, relics and resources in a mining sandbox
 
 ## Build the docker image locally
 ```console
-cd buster
-docker build . -t core-keeper-dedicated:latest
+https://raw.githubusercontent.com/xalimar/core-keeper-dedicated/main/buster/Dockerfile
 ```
 
 ## Create volumes for persistent storage
