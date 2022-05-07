@@ -68,6 +68,11 @@ It will be named `0.world.gzip`. Copy that to the docker `corekeeper_save_volume
 \\wsl$\docker-desktop-data\version-pack-data\community\docker\volumes\corekeeper_save_volume\_data\experimental\DedicatedServer\worlds
 ```
 
+On Linux it will probably be located here:
+```
+/var/lib/docker/volumes/corekeeper_save_volume/_data/experimental/DedicatedServer/worlds
+```
+
 Finally, restart the container:
 ```console
 docker start core-keeper-dedicated
