@@ -8,11 +8,6 @@ Explore an endless cavern of creatures, relics and resources in a mining sandbox
 
 # How to use this image
 
-## Build the docker image locally
-```console
-docker build https://raw.githubusercontent.com/xalimar/core-keeper-dedicated/main/buster/Dockerfile -t core-keeper-dedicated:latest
-```
-
 ## Create volumes for persistent storage
 ```console
 docker volume create steamcmd_volume
@@ -27,7 +22,7 @@ docker run -d --net=host --name=core-keeper-dedicated \
     -v "steamcmd_volume:/home/steam/steamcmd" \
     -v "steam_app_volume:/home/steam/core-keeper-dedicated" \
     -v "corekeeper_save_volume:/home/steam/.config/unity3d/Pugstorm/Core Keeper" \
-    core-keeper-dedicated
+    xalimar/core-keeper-dedicated
 ```
 
 ## View the container logs to find the Game ID
