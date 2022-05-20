@@ -5,8 +5,8 @@ FROM cm2network/steamcmd:root
 
 LABEL maintainer="xalimar@gmail.com"
 
-ENV STEAMAPPID 1621690
-ENV STEAMAPP core-keeper
+ENV STEAMAPPID 1963720 
+ENV STEAMAPP core-keeper-server
 ENV STEAMAPPDIR "${HOMEDIR}/${STEAMAPP}-dedicated"
 ENV DLURL="https://raw.githubusercontent.com/xalimar/core-keeper-dedicated"
 

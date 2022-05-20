@@ -15,34 +15,18 @@ docker build https://raw.githubusercontent.com/xalimar/core-keeper-dedicated/mai
 
 ## Create volumes for persistent storage
 ```console
-docker volume create steamcmd_login_volume
 docker volume create steamcmd_volume
 docker volume create steam_app_volume
 docker volume create corekeeper_save_volume
 ```
 
-## Authenticate steam user in container
-Unfortunately Core Keeper doesn't allow anonymous access to download the game, so we have to authenticate one-time to save this container as a trusted device.
-
-```console
-docker run -it --rm \
-    -v "steamcmd_login_volume:/home/steam/Steam" \
-    -v "steamcmd_volume:/home/steam/steamcmd" \
-    core-keeper-dedicated \
-    steamcmd/steamcmd.sh +login <steamuser> +quit
-```
-
 ## Launch Core Keeper game server
-Even though we authenticated above, we still have to pass our username and password to authenticate to check for updates. This won't work if you have Steam Guard MFA enabled on your phone, it will prompt for the code on every launch. If you are only using the emailed Steam Guard code, the authentication we did above should have cached the device for future launches.
 
 ```console
 docker run -d --net=host --name=core-keeper-dedicated \
-    -v "steamcmd_login_volume:/home/steam/Steam" \
     -v "steamcmd_volume:/home/steam/steamcmd" \
     -v "steam_app_volume:/home/steam/core-keeper-dedicated" \
     -v "corekeeper_save_volume:/home/steam/.config/unity3d/Pugstorm/Core Keeper" \
-    -e STEAMUSER=<steam user> \
-    -e STEAMPASS=<steam password> \
     core-keeper-dedicated
 ```
 
