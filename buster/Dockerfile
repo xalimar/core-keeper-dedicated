@@ -10,7 +10,6 @@ ENV STEAMAPP core-keeper
 ENV STEAMAPPDIR "${HOMEDIR}/${STEAMAPP}-dedicated"
 ENV DLURL="https://raw.githubusercontent.com/xalimar/core-keeper-dedicated"
 
-ENV STEAM_BETA_NAME=experimental
 ENV APPSAVEDIR="${HOMEDIR}/.config/unity3d/Pugstorm/Core Keeper"
 
 RUN set -x \
@@ -26,9 +25,6 @@ RUN set -x \
 	&& rm -rf /var/lib/apt/lists/*
 
 USER ${USER}
-
-# VOLUME ${STEAMAPPDIR}
-# VOLUME ${SAVEDIR}
 
 WORKDIR ${HOMEDIR}
 

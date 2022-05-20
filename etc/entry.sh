@@ -18,11 +18,10 @@ trap kill_corekeeperserver EXIT
 set -m
 
 # Currently Core Keeper requires an authenticated user to update
-echo "Loading Core Keeper from the ${STEAM_BETA_NAME} beta"
+echo "Loading Core Keeper"
 bash "${STEAMCMDDIR}/steamcmd.sh" +force_install_dir "${STEAMAPPDIR}" \
         +login "${STEAMUSER}" "${STEAMPASS}" \
         +app_update "${STEAMAPPID}" \
-        -beta "${STEAM_BETA_NAME}" \
         +quit
 
 Xvfb :99 -screen 0 1x1x24 -nolisten tcp &
