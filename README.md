@@ -49,12 +49,12 @@ C:\Users\<username>\AppData\LocalLow\Pugstorm\Core Keeper\Steam\<id>\worlds
 
 It will be named `0.world.gzip`. Copy that to the docker `corekeeper_save_volume` and overwrite the existing `0.world.gzip`. With docker desktop on windows, you can find it here:
 ```
-\\wsl$\docker-desktop-data\version-pack-data\community\docker\volumes\corekeeper_save_volume\_data\experimental\DedicatedServer\worlds
+\\wsl$\docker-desktop-data\version-pack-data\community\docker\volumes\corekeeper_save_volume\_data\DedicatedServer\worlds
 ```
 
 On Linux it will probably be located here:
 ```
-/var/lib/docker/volumes/corekeeper_save_volume/_data/experimental/DedicatedServer/worlds
+/var/lib/docker/volumes/corekeeper_save_volume/_data/DedicatedServer/worlds
 ```
 
 Finally, restart the container:
